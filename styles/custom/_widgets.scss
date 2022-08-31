@@ -1,0 +1,25 @@
+@import "../_reusable//functions";
+
+.widget-box {
+  padding: 2em 1em 3em 1em;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.widget-chart-box {
+  padding: 1em;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}

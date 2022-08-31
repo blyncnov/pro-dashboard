@@ -1,0 +1,269 @@
+@import "../_reusable//mixins";
+
+.home-welcome-box {
+  position: relative;
+  width: 100%;
+  padding: 1em 1em 2em 1em;
+  background-color: #009ef7;
+  border-radius: 4px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  margin: 0 0 1em 0;
+
+  @media (max-width: 768px) {
+    padding: 1em;
+  }
+}
+
+.close-slide {
+  display: none;
+}
+
+.home-cancel {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #fff;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    top: 5px;
+    right: 8px;
+  }
+}
+
+.home-greeting-text {
+  background-color: transparent;
+
+  h2 {
+    font-style: normal;
+  }
+
+  p {
+    margin-top: 5px;
+    font-size: 13px;
+  }
+}
+
+.home-container-grid {
+  @include Grid__Container;
+  grid-template-columns: auto 300px;
+  gap: 1em;
+
+  .widget-box {
+    box-shadow: rgb(204, 219, 232) 1px 2px 3px 0px inset,
+      rgba(255, 255, 255, 0.5) -3px -3px 3px 1px inset;
+    transition: all 0.2s ease-in;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    padding: 1.5em 1em 1.5em 1em;
+
+    .widget-text {
+      background-color: transparent;
+
+      h1 {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: rgb(204, 219, 232) 1px 2px 3px 0px inset,
+        rgba(255, 255, 255, 0.5) -3px -3px 3px 1px inset;
+    }
+
+    h4 {
+      font-weight: 400;
+      color: #333;
+    }
+  }
+
+  .widget-box:nth-child(1) {
+    background-color: rgb(226, 247, 255) !important;
+  }
+
+  .widget-box:nth-child(2) {
+    background-color: rgb(227, 255, 215) !important;
+  }
+
+  .widget-box:nth-child(3) {
+    background-color: rgb(255, 241, 218) !important;
+  }
+
+  .home-profile-card {
+    width: 100%;
+    height: auto !important;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 1em;
+    color: #333;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    font-size: 13px;
+    text-align: center;
+
+    .profile-image-container {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      background: url(../../public/profile.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      object-fit: center;
+      clip-path: circle();
+      margin: 0 auto;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    }
+
+    .profile-information-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2em;
+      margin: 1em 0;
+
+      p {
+        opacity: 0.8;
+        font-weight: 500;
+      }
+    }
+
+    .home-container-grid-card-slots {
+      margin: 1em 0;
+      width: 100%;
+      @include Grid__Container;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1em;
+
+      .slot-card {
+        width: 100%;
+        padding: 1em;
+        background-color: rgba(144, 238, 144, 0.5);
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        text-align: start !important;
+        color: #333 !important;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+        font-weight: 400 !important;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      div:nth-child(2) {
+        background-color: rgba(173, 216, 230, 0.5) !important;
+      }
+
+      div:nth-child(3) {
+        background-color: rgba(255, 214, 139, 0.5) !important;
+      }
+
+      div:nth-child(4) {
+        background-color: rgba(255, 113, 255, 0.5) !important;
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: auto;
+  }
+}
+
+.First {
+  .home-container-grid-card {
+    width: 100%;
+    @include Grid__Container;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
+
+  @media (max-width: 900px) {
+    order: 4;
+  }
+}
+
+.home-chart-container-grid {
+  width: 100%;
+  @include Grid__Container;
+  grid-template-columns: 1fr auto;
+  gap: 1em;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.widget-chart-box-text {
+  width: 100%;
+  margin: 0 0 1em 0;
+
+  h4 {
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+  }
+
+  p {
+    font-weight: 300;
+    color: #333;
+    opacity: 0.8;
+    font-size: 13px;
+  }
+}
+
+.transactions-box-container-grid {
+  width: 100%;
+  @include Grid__Container;
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+  margin: 1em 0;
+
+  .transactions-box-card {
+    background-color: rgba(232, 233, 234, 0.385);
+    border-radius: 2px;
+    padding: 0.8em;
+    cursor: pointer;
+    @include Grid__Container;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1em;
+
+    .transactions-date {
+      width: 20px;
+      height: 20px;
+      background-color: rgba(247, 18, 0);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        color: white;
+        font-size: 13px;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+
+    h6 {
+      font-weight: 500 !important;
+      color: #333;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: auto 1fr;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@mixin Grid__Container() {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin Flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin Title {
+  font-size: clamp(3rem, 1vw, 40px);
+  text-transform: capitalize;
+  color: black;
+  position: relative;
+}
+
+@mixin Description {
+  font-size: clamp(1.2rem, 1vw, 2rem);
+  margin: 1em 0;
+  opacity: 0.8;
+  color: black;
+  line-height: 1.5;
+}
+
+@mixin Button {
+  background-color: #fffafc;
+  color: black;
+  outline: none;
+  height: 36px;
+  min-height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 0 12px;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+}
